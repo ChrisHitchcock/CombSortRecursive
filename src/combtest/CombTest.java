@@ -15,8 +15,10 @@ public class CombTest {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        int[] nums = new int[]{5, 1, 2, 54, 7, 2, 6, 8, 151, 42, 4, 12, 89};
+        //Array Declaration
+        int[] nums = new int[]{151, 54, 89, 42, 12, 8, 7, 6, 5, 4, 2, 2, 1};
+        
+        //Output
         System.out.println("Original Array:");
         for (int a = 0; a < nums.length; a++) {
             System.out.print(nums[a] + " ");
@@ -29,19 +31,23 @@ public class CombTest {
     }
 
     public static void sort(int x[], int gap) {
-        boolean swap = true;
+        //Setting variables; n is the length of the array and gap 
         int n = x.length;
         gap = (gap * 10) / 13;
 
-        swap = false;
-
+        //Loop
         for (int i = 0; i < n - gap; i++) {
+            //Sorting - shows each step 
             if (x[i] > x[i + gap]) {
                 int ph = x[i];
                 x[i] = x[i + gap];
                 x[i + gap] = ph;
+                for (int a = 0;a<n;a++)
+                {
+                    System.out.print(x[a]+", ");
+                }
+                System.out.println("");
                 sort(x, gap);
-                swap = true;
             }
         }
     }
